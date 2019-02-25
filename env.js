@@ -22,10 +22,10 @@ var gcb = function(err, res) {
 
 var MagicCubeToken;
 
-function deployExample(cb) {
-    cb = cb || gcb;
+function deployExample(callback) {
+    callback = callback || gcb;
     async.series([
-        function(cb) {
+        function(callback) {
             MagicCubeToken.deploy(web3, {
                 tokenName: "MagicCube Test Token",
                 decimalUnits: 18,
@@ -34,15 +34,15 @@ function deployExample(cb) {
                 if (err) return err;
                 MagicCubeToken = _MagicCubeToken;
                 console.log("MagicCube Token: " + MagicCubeToken.contract.address);
-                cb();
+                callback();
             });
         },
-        function(cb) {
+        function(callback) {
             MagicCubeToken.generateTokens({
                 owner: eth.accounts[ 1 ],
                 amount: 10,
                 from: eth.accounts[ 0 ],
-            },cb);
+            },callback);
         },
-    ], cb);
+    ], callback);
 }
