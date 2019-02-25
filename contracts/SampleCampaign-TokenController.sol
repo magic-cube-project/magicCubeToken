@@ -24,7 +24,7 @@ pragma solidity ^0.4.6;
 ///  funds for non-profit causes, but it can be customized for any variety of
 ///  purposes.
 
-import "MagicCubeToken.sol";
+import "./MagicCubeToken.sol";
 
 
 /// @dev `Owned` is a base level contract that assigns an `owner` that can be
