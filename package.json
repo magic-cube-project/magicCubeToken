@@ -28,9 +28,9 @@
   "author": "magiccube",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Giveth/minimi/issues"
+    "url": "https://github.com/magic-cube-project/magicCubeToken/issues"
   },
-  "homepage": "https://github.com/Giveth/MagicCube",
+  "homepage": "https://github.com/magic-cube-project/magicCubeToken",
   "dependencies": {
     "eth-contract-class": "0.0.6"
   },
