@@ -3,5 +3,5 @@
 exports.TokenControllerAbi = [{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_amount","type":"uint256"}],"name":"onTransfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"},{"name":"_amount","type":"uint256"}],"name":"onApprove","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_owner","type":"address"}],"name":"proxyPayment","outputs":[{"name":"","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"}]
 exports.TokenControllerByteCode = "0x"
 exports.TokenControllerRuntimeByteCode = "0x"
-exports._solcVersion = "0.4.18+commit.9cf6e910.Emscripten.clang"
-exports._sha256 = "0x4ab21dd789d6619432629f4e930c7f6cd05cd149e14a8127f99c7c83f2c4377f"
+exports._solcVersion = "0.4.25+commit.59dbf8f1.Emscripten.clang"
+exports._sha256 = "0x56214679fa705b0cb7dae0ad9e017576743cd77f1e24c7069db3f0fcf1145489"

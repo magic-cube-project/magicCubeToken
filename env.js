@@ -3,7 +3,7 @@
 var Web3 = require('web3');
 // create an instance of web3 using the HTTP provider.
 // NOTE in mist web3 is already available, so check first if its available before instantiating
-var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
 
 var BigNumber = require('bignumber.js');
 
@@ -29,7 +29,7 @@ function deployExample(cb) {
             MagicCubeToken.deploy(web3, {
                 tokenName: "MagicCube Test Token",
                 decimalUnits: 18,
-                tokenSymbol: "MMT",
+                tokenSymbol: "MCC",
             }, function(err, _MagicCubeToken) {
                 if (err) return err;
                 MagicCubeToken = _MagicCubeToken;
