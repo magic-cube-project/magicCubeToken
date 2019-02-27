@@ -1,51 +1,18 @@
 {
   "name": "MagicCubeToken",
-  "version": "0.2.0",
-  "description": "MagicCube contract",
-  "main": "dist/MagicCubeToken.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "build": "solcpiler",
-    "test": "solcpiler; mocha --harmony"
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/magic-cube-project/magicCubeToken.git"
-  },
-  "keywords": [
-    "dao",
-    "solidity",
-    "token",
-    "charity",
-    "smart",
-    "contract",
-    "MagicCube",
-    "giveth",
-    "ethereum"
-  ],
-  "author": "magiccube",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/magic-cube-project/magicCubeToken/issues"
-  },
-  "homepage": "https://github.com/magic-cube-project/magicCubeToken",
-  "dependencies": {
-    "eth-contract-class": "0.0.6"
-  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0",
-    "ethereumjs-testrpc": "git://github.com/perissology/testrpc.git#81216dbc",
-    "lerna": "^2.2.0",
-    "random-bytes": "^1.0.0",
-    "mocha": "^3.5.0",
-    "solcpiler": "0.0.6",
-    "web3": "git://github.com/perissology/web3.js.git#all_fixes",
-    "chai": "^4.1.0"
+    "lite-server": "^2.3.0"
   }
 }
