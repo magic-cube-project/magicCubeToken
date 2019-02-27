@@ -222,20 +222,24 @@ var address = '0x3699bafc250b16121196ea242ec7274b1f9a4cbc';
 // 通过ABI和地址获取已部署的合约对象
 var metacoin = web3.eth.contract(abi).at(address);
 
-console.log(metacoin);
-
 var account_one = web3.eth.accounts[0];
+var account_two = web3.eth.accounts[1];
 var account_one_balance = metacoin.balanceOf.call(account_one);
 console.log("account one balance: ", account_one_balance.toNumber());
 
-// 获取事件对象
-var myEvent = metacoin.Transfer();
-// 监听事件，监听到事件后会执行回调函数
-myEvent.watch(function(err, result) {
-    if (!err) {
-        console.log(result);
-    } else {
-        console.log(err);
-    }
-   // myEvent.stopWatching();
-});
+
+// 开始转账
+var txhash = metacoin.transfer.sendTransaction(account_two, 10000000, {from:account_one});
+console.log("txhash",txhash);
+
+// // 获取事件对象
+// var myEvent = metacoin.Transfer();
+// // 监听事件，监听到事件后会执行回调函数
+// myEvent.watch(function(err, result) {
+//     if (!err) {
+//         console.log(result);
+//     } else {
+//         console.log(err);
+//     }
+//    // myEvent.stopWatching();
+// });
