@@ -218,7 +218,7 @@ var abi = [
         "type": "event"
     }
 ];
-var address = '0x3699bafc250b16121196ea242ec7274b1f9a4cbc';
+var address = '0x754e03e8018dbfa3623fef55f7cd7b3ded0b43e4';
 // 通过ABI和地址获取已部署的合约对象
 var metacoin = web3.eth.contract(abi).at(address);
 
