@@ -14,7 +14,9 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    
+  },
   "dependencies": {
     "web3": "^0.20.1"
   }
