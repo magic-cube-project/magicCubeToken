@@ -7,13 +7,15 @@
     "test": "test"
   },
   "scripts": {
-    "compile":"truffle compile",
-    "migrate":"truffle migrate",
-    "clean":"rm -R build",
-    "testRPC":"ganache-cli -p 7545"
+    "compile": "truffle compile",
+    "migrate": "truffle migrate",
+    "clean": "rm -R build",
+    "testRPC": "ganache-cli -p 7545"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
+    "web3": "^0.20.1"
   }
 }
