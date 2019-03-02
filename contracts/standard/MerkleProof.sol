@@ -4,7 +4,6 @@ pragma solidity ^0.4.24;
 /**
  * @title MerkleProof
  * @dev Merkle proof verification based on
- * https://github.com/ameensol/merkle-tree-solidity/blob/master/src/MerkleProof.sol
  */
 library MerkleProof {
   /**

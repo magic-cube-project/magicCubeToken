@@ -2,14 +2,14 @@ pragma solidity ^0.4.2;
 import "./standard/token/ERC20/StandardToken.sol";
 
 contract MagicCubeToken is StandardToken {
-    string public name = "MagicCubeToken"; //当前的合约名字
-    string public symbol = "MCC"; // 当前的合约符号
-    uint public decimals = 4;  // 保留小数点后4位
-    uint public INITIAL_SUPPLY = 200000000000000;  // 一开始的储量 200亿
+    string public name = "MagicCubeToken"; // Current contract name
+    string public symbol = "MCC"; // Current contract symbol
+    uint public decimals = 4;  // Keep 4 digits after the decimal point
+    uint public INITIAL_SUPPLY = 200000000000000;  // The initial reserves of 20 billion
 
     /* 
-     * 初始化合约，并且把初始的所有代币都给这合约的创建者
-     * @param initialSupply 代币的总数
+     * Initialize the contract and give all the initial tokens to the creator of the contract
+     * @param initialSupply Total number of tokens
      */
     constructor() public{
         totalSupply_ = INITIAL_SUPPLY;
