@@ -2,9 +2,11 @@
   "name": "MagicCubeToken",
   "version": "1.0.0",
   "description": "",
-  "main": "truffle.js",
   "directories": {
-    "test": "test"
+    "clean": "clean",
+    "compile":"compile",
+    "migrate": "migrate",
+    "testRPC":"testRPC"
   },
   "scripts": {
     "compile": "truffle compile",
@@ -14,10 +16,10 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "dependencies": {
+    "ganache-cli": "^6.4.0",
+    "truffle": "^4.1.14",
     "web3": "^0.20.1"
   }
 }
