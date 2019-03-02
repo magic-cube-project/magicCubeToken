@@ -1,3 +1,8 @@
+
+![MgaicCube Token](readme-header.png)
+
+The MagicCubeToken contract is a standard ERC20 token with extra game functionality:
+
 tutor document
 
 https://www.jianshu.com/p/ad14f4b0eec8

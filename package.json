@@ -9,7 +9,8 @@
   "scripts": {
     "compile":"truffle compile",
     "migrate":"truffle migrate",
-    "clean":"rm -R build"
+    "clean":"rm -R build",
+    "testRPC":"ganache-cli -p 7545"
   },
   "author": "",
   "license": "ISC",
