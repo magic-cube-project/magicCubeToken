@@ -42,11 +42,11 @@ app.all('*', function (req, res, next) {
 
 
 
-app.get("/"+config.router+"/*/*", function (req, res) {
+app.get("/*/*", function (req, res) {
     handerReq(req, res);
 });
 
-app.post("/"+config.router+"/*/*", multipartMiddleware, function (req, res) {
+app.post("/*/*", multipartMiddleware, function (req, res) {
     handerReqPost(req, res);
 });
 
@@ -54,12 +54,8 @@ app.post("/"+config.router+"/*/*", multipartMiddleware, function (req, res) {
 function handerReq(req, res) {
     var url = req.originalUrl.split("?")[0];
     var urlArr = url.split("/");
-    var project = urlArr[1];
-    var model = urlArr[2];
-    var action = urlArr[3];
-
-    // console.log(project,model,action);
-
+    var model = urlArr[1];
+    var action = urlArr[2];
     try {
         if (!action || !model) {
             throw action + " " + " " + model + " no exist"
@@ -79,21 +75,16 @@ function handerReq(req, res) {
 
         });
     } catch (err) {
-        console.log("当前出现了异常", err);
+        console.error("Expection", err);
         res.send(err);
     }
-
 }
 
 function handerReqPost(req, res) {
     var url = req.originalUrl.split("?")[0];
     var urlArr = url.split("/");
-    var project = urlArr[1];
-    var model = urlArr[2];
-    var action = urlArr[3];
-
-    // console.log(project,model,action);
-
+    var model = urlArr[1];
+    var action = urlArr[2];
     try {
         if (!action || !model) {
             throw action + " " + " " + model + " no exist";
@@ -110,13 +101,11 @@ function handerReqPost(req, res) {
             }
         });
     } catch (err) {
-        console.log("当前出现了异常", err);
+        console.error("Expection", err);
         res.send(err);
     }
 }
 
 function isPromise(obj) {
-
     return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
-
 }
