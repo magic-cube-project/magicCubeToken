@@ -77,3 +77,23 @@ All ERC20 tokens are defined in the following ways
    ```
 
    Returning _spender also extracts the number of tokens.
+
+
+
+### Events
+
+1. Transfer
+
+   ```
+   event Transfer(address indexed _from, address indexed _to, uint256 _value)
+   ```
+
+   When the token is successfully transferred, be sure to trigger the Transfer event.
+
+2. Approval
+
+   ```
+   event Approval(address indexed _owner, address indexed _spender, uint256 _value)
+   ```
+
+   When the call to the approve function succeeds, be sure to trigger the Approval event.
