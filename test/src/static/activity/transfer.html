@@ -1,0 +1,65 @@
+<layout data-id="context">
+    <context>
+        <!-- 通过模板来加载模块 -->
+        {{=app.mountView("header_subpage","transfer")}}
+
+        <div class="context-wrap" name="context">
+            <div class="label-input" data-action="select">
+                <label>transfer address</label>
+                <input type="text" placeholder="please select transfer address" name="transfer_address" readonly>
+            </div>
+
+            <div class="label-input" data-action="select">
+                <label>target address</label>
+                <input type="text" placeholder="pleasen select target address" readonly name="target_address">
+            </div>
+
+            <div class="label-input">
+                <label>amount</label>
+                <input type="number" placeholder="pleasen input value" name="amount">
+            </div>
+            <button class="btn-pwa-base" data-action="transfer">transfer</button>
+        </div>
+    </context>
+</layout>
+
+
+<script>
+    APP.define({
+        name: "transfer",
+        type: "SubActivity",
+        layout: resMap.context,
+        init: function (data) {
+
+            var testData = [];
+            for (var k in app.web3.getAccount()) {
+                testData.push({
+                    value: app.web3.getAccount()[k].address,
+                    text: app.web3.getAccount()[k].address
+                });
+            }
+            this.addEvent("click", "select", dom => {
+                SelectCustom.triggerSelect(dom, testData).then(function (dom1) {
+                    var url = dom1.value;
+                }.bind(this));
+            });
+           
+            this.addEvent("click", "transfer", function(){
+                var transfer_address = this.findDom("transfer_address").value;
+                var target_address = this.findDom("target_address").value;
+                var amount = this.findDom("amount").value;
+                app.web3.transfer(transfer_address,target_address,amount);
+            });
+        },
+        amFinished: function () {
+
+        },
+        activite: function () {
+
+
+        },
+        sleep: function () {
+
+        }
+    });
+</script>

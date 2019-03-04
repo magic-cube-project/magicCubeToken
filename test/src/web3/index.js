@@ -35,15 +35,32 @@ exports.balanceOf = function(address){
     }
     return balances;
 }
+/**
+ * start transfer
+ */
+exports.transfer = function(account_one,account_two,amount){
+    try {
+        var txhash = metacoin.transfer.sendTransaction(account_two, amount, {
+            from: account_one
+        }); 
+    } catch (error) {
+        throw error;
+    }
+  
+    return txhash;
+}
 
 
-var account_one = web3.eth.accounts[0];
-var account_two = web3.eth.accounts[1];
 
-// start transfer
-var txhash = metacoin.transfer.sendTransaction(account_two, 10000000, {
-    from: account_one
+// get event object
+var myEvent = metacoin.Transfer();
+// Listen for events, callback functions are executed after the event is listened to
+myEvent.watch(function (err, result) {
+    if (!err) {
+        console.log(result);
+    } else {
+        console.log(err);
+    }
+    // myEvent.stopWatching();
 });
-console.log("txhash", txhash);
-
 

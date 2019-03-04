@@ -1,0 +1,23 @@
+{
+    "name": "navigation_drawer_activity",
+    "version": "0.0.1",
+    "description": "",
+    "author": "jhello",
+    "script": [
+        "js/class.js",
+        "js/http.js",
+        "js/net.js",
+        "js/web3.js",
+        "js/select.js"
+    ],
+    "icon": {
+     "url": "img/R2D2.png"
+    },
+    "res": [
+       "activity/main.html",
+       "activity/transfer.html"
+    ],
+    "asyncTask": [
+        "../../PWAUI/index.js"
+    ]
+}

@@ -1,0 +1,164 @@
+<layout data-id="context">
+    <context>
+        <header>
+            <span class="category-left" data-action="open-side-nav">
+                <div class="ai-icon-menu" style="font-size:1.5rem;color:white;line-height: 0.8;cursor: pointer;"> </div>
+            </span>
+            <span class="header-title">MCC test wallet</span>
+        </header>
+        <div class="context-wrap" name="context">
+            {{=this.mountView({id:"account-list",tag:AccountListView}) }}
+        </div>
+        <div class="side-nav-bg" name="side-nav">
+            <div class="mask-bg">
+
+            </div>
+            <div class="side-nav-list">
+
+                <ul class="ul-pwa-line" name="nav">
+                    <li data-action="transfer">
+                        <p>transfer</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </context>
+</layout>
+
+<style>
+    .main-header {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background: rgb(52, 60, 64);
+        color: #fff;
+    }
+
+    .header-left {
+        float: left;
+    }
+
+    .header-right {
+        float: right;
+    }
+
+    .main-nav {
+        overflow: scroll;
+        width: 200px;
+        display: inline-block;
+        float: left;
+        height: 100%;
+        background: rgb(37, 40, 34);
+        color: #FFFFFF;
+    }
+
+    .main-content {
+        /*background-color: antiquewhite;*/
+        width: 100%;
+        float: right;
+        height: 100%;
+    }
+
+    .main-logo {
+        box-sizing: border-box;
+        padding: 10px;
+        margin-top: 10px;
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        /* background: url(../img/agent.png) no-repeat center center; */
+        background-size: contain;
+    }
+
+    .main-nav li {
+        box-sizing: border-box;
+        line-height: 40px;
+        text-align: center;
+        width: 100%;
+        padding: 0px 10px 0px;
+        cursor: pointer;
+    }
+
+    .main-nav li:hover {
+        background-color: #333333;
+    }
+
+    .navbg a {
+        text-decoration: none;
+        display: block;
+        /* width: 135px;
+    height: 30px;
+    line-height: 30px; */
+        color: #fff;
+        text-align: center;
+    }
+</style>
+
+<script>
+    APP.define({
+        name: "main",
+        type: "NavigationDrawerActivity",
+        layout: resMap.context,
+        init: function (data) {
+            var side_nav = this.findDom("side-nav");
+            var sided = new SideNav(side_nav);
+            this.addEvent("click", "open-side-nav", function () {
+                sided.display();
+            });
+
+            this.addEvent("click","transfer",function(){
+                SubActivity.slidein(this, this.loadActivity("transfer", "transfer").init());
+            })
+        },
+        activite: function () {
+            var accountListView = this.findDomById("account-list");
+            app.web3.balanceOf().then(res => {
+                accountListView.set(res);
+            });
+        },
+        sleep: function () {
+
+        }
+    });
+</script>
+
+<script>
+
+    window.AccountListView = class extends JView {
+        static layout() {
+            return resMap["account-list"].text
+        }
+        static data() {
+            return []
+        }
+    }
+
+</script>
+
+<layout data-id="account-list">
+    <div class="account-list-wrapper">
+        <h2>account list</h2>
+        <hr />
+
+        <ul>
+            {{ data.forEach(element => {   }}
+            <li>address: {{=element.address}} </li>
+            <li> MCC:{{=element.balance}} </li>
+            {{  });  }}
+        </ul>
+
+    </div>
+</layout>
+
+<style>
+    .account-list-wrapper {
+        padding: 10px;
+    }
+
+    .account-list-wrapper hr {
+        height: 1px;
+        border-bottom: 1px #c5c5c5 solid;
+        margin-top: 5px;
+    }
+</style>
