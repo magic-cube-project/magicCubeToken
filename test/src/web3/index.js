@@ -11,7 +11,7 @@ if (typeof web3 !== 'undefined') {
 
 var abi = fs.readFileSync(__dirname+"/standard.json").toString();
 abi = JSON.parse(abi);
-var address = '0xdbbb657093d82b9f380d618f858d974592946523';
+var address = '0x47295f39f6da1d32ea353cdab4cd6efd13fdf448';
 // Get deployed contract objects through ABI and address
 var metacoin = web3.eth.contract(abi).at(address);
 

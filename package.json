@@ -12,7 +12,8 @@
     "compile": "truffle compile",
     "migrate": "truffle migrate",
     "clean": "rm -R build",
-    "testRPC": "ganache-cli -p 7545"
+    "testRPC": "ganache-cli -p 7545",
+    "wallet":"node test/app.js"
   },
   "author": "",
   "license": "ISC",
