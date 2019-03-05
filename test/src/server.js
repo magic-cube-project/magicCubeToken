@@ -3,9 +3,7 @@
  * @type {[type]}
  */
 
-var crypto = require('./utils/crypto');
 var express = require('express');
-
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 
@@ -18,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-app.use(express.static('static'))
+app.use(express.static(__dirname+'/static'))
 
 
 
