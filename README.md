@@ -41,7 +41,7 @@ npm run migrate
 
 ![MgaicCube Token](img/1551541391.png)
 
- **In the red box, the contract address is indicated. **
+ ** In the red box, the contract address is indicated. **
 
 ### About test
 
