@@ -11,6 +11,18 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Neo.SmartContract.Framework/2.9.3": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/Neo.SmartContract.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Neo.SmartContract.Framework.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -42,6 +54,18 @@
         "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
+      ]
+    },
+    "Neo.SmartContract.Framework/2.9.3": {
+      "sha512": "b/J3SVqHEPickQi4QQGuldb8ZzMpSpwlIxrCKEPKjtqdle9W26+PKK87osnAMKRTsJNtDa6puvW7PDC8aQ4SWA==",
+      "type": "package",
+      "path": "neo.smartcontract.framework/2.9.3",
+      "files": [
+        ".signature.p7s",
+        "lib/net40/Neo.SmartContract.Framework.dll",
+        "lib/netstandard1.6/Neo.SmartContract.Framework.dll",
+        "neo.smartcontract.framework.2.9.3.nupkg.sha512",
+        "neo.smartcontract.framework.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -175,7 +199,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "Neo.SmartContract.Framework >= 2.9.3"
     ]
   },
   "packageFolders": {
@@ -222,6 +247,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Neo.SmartContract.Framework": {
+            "target": "Package",
+            "version": "[2.9.3, )"
           }
         },
         "imports": [
