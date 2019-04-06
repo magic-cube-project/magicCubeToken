@@ -14,6 +14,12 @@ namespace NEP5
 
         private static readonly byte[] Owner = "AHbh2LqUr5i6Z62tqBwB4GoECbJLxHL7Js".ToScriptHash(); //Owner Address
 
+
+        private const ulong factor = 10000; //decided by Decimals()
+        //Since we don't want to deal with floating points sending 555 tokens with 4 Decimals (10000) 
+        //would actually mean that you want to  send 20000000000 tokens.
+        private const ulong total_amount = 20000000000 * factor; //token amount
+
         public static object Main(string method, object[] args)
         {
             if (Runtime.Trigger == TriggerType.Verification)
