@@ -1,14 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.ItemProperties.NEP5 FirstBuild="True" />
   <MonoDevelop.Ide.Workbench ActiveDocument="NEP5/MagicCubeToken.cs">
     <Files>
-      <File FileName="NEP5/MagicCubeToken.cs" Line="71" Column="47" />
+      <File FileName="NEP5/MagicCubeToken.cs" Line="16" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NEP5" expanded="True">
             <Node name="NEP5" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+                <Node name="SdkDependencies" expanded="True" />
+              </Node>
               <Node name="MagicCubeToken.cs" selected="True" />
             </Node>
           </Node>

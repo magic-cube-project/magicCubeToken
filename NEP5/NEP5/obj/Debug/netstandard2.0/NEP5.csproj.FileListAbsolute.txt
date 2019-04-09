@@ -1,0 +1,9 @@
+/Users/shizhechen/Documents/GitHub/magicCubeToken/NEP5/NEP5/bin/Debug/netstandard2.0/NEP5.deps.json
+/Users/shizhechen/Documents/GitHub/magicCubeToken/NEP5/NEP5/bin/Debug/netstandard2.0/NEP5.dll
+/Users/shizhechen/Documents/GitHub/magicCubeToken/NEP5/NEP5/bin/Debug/netstandard2.0/NEP5.pdb
+/Users/shizhechen/Documents/GitHub/magicCubeToken/NEP5/NEP5/obj/Debug/netstandard2.0/NEP5.csprojAssemblyReference.cache
+/Users/shizhechen/Documents/GitHub/magicCubeToken/NEP5/NEP5/obj/Debug/netstandard2.0/NEP5.csproj.CoreCompileInputs.cache
+/Users/shizhechen/Documents/GitHub/magicCubeToken/NEP5/NEP5/obj/Debug/netstandard2.0/NEP5.AssemblyInfoInputs.cache
+/Users/shizhechen/Documents/GitHub/magicCubeToken/NEP5/NEP5/obj/Debug/netstandard2.0/NEP5.AssemblyInfo.cs
+/Users/shizhechen/Documents/GitHub/magicCubeToken/NEP5/NEP5/obj/Debug/netstandard2.0/NEP5.dll
+/Users/shizhechen/Documents/GitHub/magicCubeToken/NEP5/NEP5/obj/Debug/netstandard2.0/NEP5.pdb

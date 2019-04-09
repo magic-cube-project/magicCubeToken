@@ -30,6 +30,8 @@ namespace NEP5
             {
                 var callscript = ExecutionEngine.CallingScriptHash;
 
+                if (method == "deploy") return Deploy();
+
                 if (method == "balanceOf") return BalanceOf((byte[])args[0]);
 
                 if (method == "decimals") return Decimals();
@@ -46,6 +48,18 @@ namespace NEP5
             }
             return false;
         }
+
+        // initialization parameters, only once
+        public static bool Deploy()
+        {
+            byte[] total_supply = Storage.Get(Storage.CurrentContext, "totalSupply");
+            if (total_supply.Length != 0) return false;
+            Storage.Put(Storage.CurrentContext, Owner, total_amount);
+            Storage.Put(Storage.CurrentContext, "totalSupply", total_amount);
+            Transferred(null, Owner, total_amount);
+            return true;
+        }
+
 
         [DisplayName("balanceOf")]
         public static BigInteger BalanceOf(byte[] account)

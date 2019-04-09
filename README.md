@@ -18,6 +18,7 @@ Ganache v1.3.0
 Truffle v4.1.14 
 solidity v0.4.2
 web3 v0.20.0
+Neo.SmartContract v2.9.3
 ```
 ### how to start Ganache
 
