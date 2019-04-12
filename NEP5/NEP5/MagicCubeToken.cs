@@ -12,7 +12,7 @@ namespace NEP5
         [DisplayName("transfer")]
         public static event Action<byte[], byte[], BigInteger> Transferred;
 
-        private static readonly byte[] Owner = "AHbh2LqUr5i6Z62tqBwB4GoECbJLxHL7Js".ToScriptHash(); //Owner Address
+        private static readonly byte[] Owner = "ARxmsUfRsw9RSmmTXBR5CAVWqCYnp9NYq1".ToScriptHash(); //Owner Address
 
 
         private const ulong factor = 10000; //decided by Decimals()
@@ -52,10 +52,11 @@ namespace NEP5
         // initialization parameters, only once
         public static bool Deploy()
         {
-            byte[] total_supply = Storage.Get(Storage.CurrentContext, "totalSupply");
-            if (total_supply.Length != 0) return false;
-            Storage.Put(Storage.CurrentContext, Owner, total_amount);
-            Storage.Put(Storage.CurrentContext, "totalSupply", total_amount);
+            if (TotalSupply() != 0) return false;
+            StorageMap contract = Storage.CurrentContext.CreateMap(nameof(contract));
+            contract.Put("totalSupply", total_amount);
+            StorageMap asset = Storage.CurrentContext.CreateMap(nameof(asset));
+            asset.Put(Owner, total_amount);
             Transferred(null, Owner, total_amount);
             return true;
         }
